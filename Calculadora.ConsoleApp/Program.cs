@@ -12,7 +12,7 @@
 // 2. Nossa calculadora deve armazenar um histórico de operações anteriores
 
 // Arrays
-string[] historicoOperacoes = new string[1];
+string[] historicoOperacoes = new string[100];
 int contadorOperacoes = 0;
 
 while (true == true)
@@ -132,6 +132,14 @@ while (true == true)
 
     if (contadorOperacoes < historicoOperacoes.Length)
     {
+        historicoOperacoes[contadorOperacoes] = textoOperacao;
+        contadorOperacoes++;
+    }
+    else
+    {
+        historicoOperacoes = new string[100];
+        contadorOperacoes = 0;
+
         historicoOperacoes[contadorOperacoes] = textoOperacao;
         contadorOperacoes++;
     }
